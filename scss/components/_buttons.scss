@@ -1,0 +1,27 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as mx;
+
+.btn {
+  background-color: v.$moderateCyan;
+  color: f.setTextColor(v.$moderateCyan);
+  font-weight: 700;
+  padding: 2rem 5rem;
+  border-radius: 5rem;
+
+  &:hover {
+    background-color: v.$darkCyan;
+  }
+}
+
+.card-btn {
+  padding: 1.2rem 3rem;
+  font-weight: 500;
+}
+
+.continue-btn {
+  padding: 1rem 3rem;
+  @include mx.mq(700px) {
+    padding: 1.5rem 3rem;
+  }
+}

@@ -1,0 +1,31 @@
+%flex {
+  display: flex;
+  align-items: center;
+}
+
+%borderRadius {
+  border-radius: 1.5rem;
+}
+
+@mixin flexCenter {
+  @extend %flex;
+  justify-content: center;
+}
+
+@mixin flexStart {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@mixin flexSpaceBetween {
+  @extend %flex;
+  justify-content: space-between;
+}
+
+@mixin mq($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+

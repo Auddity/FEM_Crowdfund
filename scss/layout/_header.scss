@@ -1,0 +1,43 @@
+@use '../abstracts/mixins.scss' as mx;
+
+.header {
+  height: 300px;
+  width: 100%;
+  background-image: url('../images/image-hero-mobile.jpg');
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  @include mx.mq(568px) {
+    background-image: url('../images/image-hero-desktop.jpg');
+    background-position: center center;
+  }
+  @include mx.mq(1000px) {
+    height: 400px;
+  }
+
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 300px;
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    @include mx.mq(1000px) {
+      height: 400px;
+    }
+  }
+
+  .heading-content {
+    position: relative;
+    padding-top: 2.2rem;
+    z-index: 2;
+    @include mx.flexSpaceBetween;
+    @include mx.mq(1000px) {
+      padding-top: 4rem;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/functions' as f;
+
+.nav-modal {
+  position: absolute;
+  top: 8rem;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  background-color: #fefefe;
+  color: f.setTextColor(#fefefe);
+  font-size: 1.7rem;
+  line-height: 1.4;
+  border-radius: 1.2rem;
+  z-index: 100;
+  
+  ul {
+    @include mx.flexStart;
+    flex-direction: column;
+    
+    li {
+      width: 100%;
+      padding: 2.5rem;
+      font-weight: 700;
+      
+      &:not(li:last-child) {
+        border-bottom: 1px solid v.$bodyBg;
+      }
+    }
+  }
+}

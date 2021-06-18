@@ -1,0 +1,22 @@
+@use '../abstracts/mixins' as mx;
+
+.about {
+  width: 100%;
+  background-color: #fefefe;
+  line-height: 1.7;
+  padding: 2rem;
+  margin: 2rem 0;
+  transform: translateY(-3rem);
+  @extend %borderRadius;
+  @include mx.mq(768px) {
+    padding: 2rem 4rem;
+  }
+
+  h2 {
+    padding: 2rem 0;
+  }
+
+  p:last-child {
+    padding-bottom: .5rem;
+  }
+}

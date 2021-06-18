@@ -1,0 +1,8 @@
+@use '../abstracts/variables' as v;
+
+.status-bar {
+  height: 8px;
+  width: 100%;
+  // Below, Temp for styling.  Make dynamic in JS
+  background-image: linear-gradient(90deg, v.$darkCyan 75%, v.$darkGray 75%);
+}

@@ -1,0 +1,58 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+
+.stats {
+  width: 100%;
+  background-color: #fefefe;
+  padding: 1rem 2rem;
+  transform: translateY(-3rem);
+  @extend %borderRadius;
+  @include mx.mq(768px) {
+    padding: 2rem 4rem;
+  }
+  
+  &-content {
+    text-align: center;
+    @include mx.mq(768px) {
+      text-align: left;
+      display: flex;
+      justify-content: space-evenly;
+      margin-left: -3rem;
+
+      .total-backers {
+        flex-grow: .2;
+      }
+      .days-left {
+        flex-grow: .2;
+      }
+    }
+
+    & > div {
+      padding: 2.5rem 0;
+      
+      p:last-child {
+        padding-top: 1.5rem;
+      }
+    }
+  }
+
+  &-bar {
+    width: 100%;
+    height: 1.3rem;
+    background-color: v.$lightGray;
+    margin: 1rem auto 2.5rem;
+    border-radius: 10px;
+    @include mx.mq(768px) {
+      width: 100%;
+    }
+
+    &-fill {
+      height: 100%;
+      // temp 
+      // width: 75%;
+      // temp
+      background-color: v.$moderateCyan;
+      border-radius: 1.3rem;
+    }
+  }
+}

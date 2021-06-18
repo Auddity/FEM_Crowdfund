@@ -1,0 +1,201 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/functions' as f;
+
+// BODY CARDS //
+.card {
+  width: 100%;
+  padding: 2rem 2.5rem;
+  border: 1px solid v.$lightGray;
+  @extend %borderRadius;
+  margin: 2rem 0;
+  @include mx.mq(770px) {
+    padding: 3rem 3rem;
+  }
+
+  &-heading {
+    padding-bottom: 1rem;
+    @include mx.mq(770px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    p {
+      color: v.$moderateCyan;
+    }
+  }
+
+  &-cta {
+    padding: 1rem 0;
+    @include mx.mq(770px) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    p {
+      @extend %flex;
+      
+      span {
+        padding-right: 1rem;
+      }
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+// MODAL CARDS //
+.modal-card {
+  position: relative;
+  margin-bottom: 0;
+
+  .pledge-select {
+    @extend %flex;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+
+    .radio-container {
+      @extend %flex;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-top: -0.8rem;
+      border: 1px solid v.$lightGray;
+      border-radius: 50%;
+
+      .select {
+        appearance: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:active {
+          outline: none;
+        }
+
+        &:checked {  
+          outline: none;
+          background-color: v.$moderateCyan;
+          border: 5px solid #fefefe;
+        }
+      }
+    }
+
+    .card-heading {
+      font-size: 1.5rem;
+      padding-left: 1.5rem;
+
+      p {
+        @include mx.mq(700px) {
+          padding: 0;
+        }
+        @include mx.mq(770px) {
+          padding-left: 1rem;
+        }
+      }
+
+      h3:hover {
+        color: v.$moderateCyan;
+      }
+    }
+  }
+
+  p {
+    padding-bottom: 1rem;
+  }
+
+  .card-cta {
+    @include mx.mq(700px) {
+      position: absolute;
+      top: 0;
+      right: 5rem;
+      margin-top: 1rem;
+
+      p {
+        span {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+// MODAL CARD SELECTED DROP DOWN 
+.card-pledge-container {
+  width: 100%;
+  padding: 0 2.5rem;
+  border-top: 1px solid v.$lightGray;
+  border-left: 2px solid v.$moderateCyan;
+  border-right: 2px solid v.$moderateCyan;
+  border-bottom: 2px solid v.$moderateCyan;
+  @extend %borderRadius;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  @include mx.mq(770px) {
+    padding: 0 3rem;
+  }
+
+  .card-pledge {
+    text-align: center;
+    padding: 1rem 0 2rem;
+    margin-top: 1.5rem;
+    @include mx.mq(700px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    p {
+      padding-bottom: .5rem;
+    }
+    
+    .pledge-amount-container {
+      padding-top: 1.5rem;
+      @include mx.flexSpaceBetween;
+      @include mx.mq(700px) {
+        padding-top: 0;
+      }
+  
+      .input-container {
+        @include mx.flexSpaceBetween;
+        font-weight: 700;
+        font-size: 1.6rem;
+        padding: .51rem 0 .51rem 2rem;
+        border: 1px solid v.$lightGray;
+        border-radius: 5rem;
+        overflow: hidden;
+        @include mx.mq(700px) {
+          padding: 1.2rem 2.5rem;
+          padding-right: 1rem;
+          margin-right: 2rem;
+        }
+
+        &:hover {
+          border-color: v.$moderateCyan;
+        }
+        
+        input[type=text] {
+          display: inline-block;
+          font-weight: inherit;
+          font-size: inherit;
+          padding-left: 1rem;          
+          width: 6rem;
+          border: 0;
+  
+          &:focus, &:active {
+            outline: none;
+          }
+  
+          &::-webkit-input-placeholder {
+            color: #010101;
+          }
+        }
+      }
+      // Continue Button style in _buttons.scss
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/functions' as f;
+
+.nav-container {
+  .hamburger {
+    @include mx.flexCenter;
+    justify-content: flex-end;
+    @include mx.mq(1000px) {
+      display: none;
+    }
+  }
+
+  .nav {
+    display: none;
+    color: f.setTextColor(#000);
+    @include mx.mq(1000px) {
+      display: block;
+
+      ul li {
+        margin-left: 4rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
